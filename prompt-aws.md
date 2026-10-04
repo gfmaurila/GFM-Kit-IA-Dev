@@ -1,20 +1,46 @@
-# BOOTSTRAP — KIT IA DEV
+# BOOTSTRAP — KIT IA DEV + KNOWLEDGE DICTIONARY
 
-Você vai inicializar o **Kit IA Dev** no repositório existente, preparando a orquestração para posteriormente construir o projeto baseado na arquitetura definida no projeto de referência **02 - dotnet - AWS**.
+Você vai inicializar o **Kit IA Dev** no repositório existente.
+
+Esta execução tem como objetivo preparar o ambiente de IA, Agents, Skills, documentação, conhecimento, governança, GitFlow e backlog de Tasks.
+
+## REGRA CRÍTICA
+
+**NÃO IMPLEMENTE O PROJETO NESTA EXECUÇÃO.**
+
+O projeto NÃO deve ser criado ainda.
+
+Primeiro devemos instalar/configurar o Kit IA Dev, carregar todo o conhecimento disponível e somente depois estruturar o backlog e as Tasks que serão executadas futuramente.
 
 Fale comigo em **português do Brasil**.
 
-## 1. CAMINHOS
+Conteúdo técnico de:
 
-Kit IA Dev:
+- `CLAUDE.md`
+- `AGENTS.md`
+- `SKILL.md`
+- `agent_docs`
+- instruções técnicas para Agents
 
-`D:\Empresa\GFMaurila\projetos\Kit-IA-Dev\Kit-IA-Dev`
+deve permanecer em inglês quando o padrão do Kit assim determinar.
 
-Projeto alvo:
+---
 
-`D:\Empresa\GFMaurila\projetos\gfm-template-cms-aws`
+# 1. CAMINHOS OFICIAIS
 
-Considere o segundo caminho como a raiz oficial do repositório.
+## Kit IA Dev
+
+```text
+D:\Empresa\GFMaurila\projetos\Kit-IA-Dev\Kit-IA-Dev
+```
+
+## Projeto alvo
+
+```text
+D:\Empresa\GFMaurila\projetos\gfm-template-cms-aws
+```
+
+O segundo caminho é a raiz oficial do repositório.
 
 ---
 
@@ -22,184 +48,573 @@ Considere o segundo caminho como a raiz oficial do repositório.
 
 Nesta execução você deve SOMENTE:
 
-1. instalar/inicializar o Kit IA Dev;
-2. analisar o repositório;
-3. preparar Agents e Skills;
-4. preparar a documentação de governança;
-5. preparar a estrutura de execução;
-6. decompor o projeto em Tasks;
-7. definir dependências entre Tasks;
-8. preparar GitFlow;
-9. definir uma branch própria para cada Task;
-10. preparar o fluxo automático de commit, push, PR, validação e merge;
-11. deixar o projeto pronto para execução incremental posterior.
+1. analisar e instalar/inicializar o Kit IA Dev;
+2. analisar a estrutura atual do repositório;
+3. localizar e carregar o Knowledge Dictionary;
+4. ler TODA a documentação relevante;
+5. consolidar os requisitos encontrados;
+6. preparar Agents;
+7. preparar Skills;
+8. preparar documentação de governança;
+9. preparar estrutura de execução;
+10. preparar GitFlow;
+11. criar o backlog;
+12. decompor o backlog em Tasks;
+13. identificar dependências;
+14. definir branch para cada Task;
+15. preparar automação futura de execução;
+16. preparar commit/push/PR/review/merge automático;
+17. parar antes da implementação.
 
-## IMPORTANTE
+---
 
-**NÃO IMPLEMENTE O PROJETO NESTA EXECUÇÃO.**
+# 3. NÃO CRIAR O PROJETO AINDA
 
-Não criar ainda:
+É PROIBIDO nesta execução criar ou implementar:
 
-- projetos `.csproj`;
-- solution `.sln`;
+- `.sln`;
+- `.csproj`;
 - APIs;
 - backend;
 - frontend;
 - React;
-- banco de dados;
-- migrations;
-- Docker Compose da aplicação;
-- containers da aplicação;
-- AWS resources;
-- Terraform/CloudFormation/CDK;
-- Kafka;
-- RabbitMQ;
-- Redis;
-- MongoDB;
-- MySQL;
+- entidades;
 - endpoints;
-- entidades de domínio;
 - handlers;
 - repositories;
-- testes da aplicação;
-- código funcional da aplicação.
-
-A execução atual é exclusivamente de **bootstrap, planejamento, governança, Agents/Skills e Tasks**.
-
----
-
-# 3. FONTE ARQUITETURAL
-
-Todo planejamento futuro deve seguir a arquitetura definida no projeto/conversa de referência:
-
-`02 - dotnet - AWS`
-
-Considere como baseline:
-
-- .NET;
-- ASP.NET Core;
-- Modular Monolith;
-- DDD;
-- SOLID;
-- Clean Code;
-- CQRS;
-- Commands;
-- Queries;
-- Domain Events;
-- Vertical Slice quando aplicável;
-- Transactional Outbox;
-- MySQL;
-- MongoDB;
-- Redis;
+- migrations;
+- bancos;
+- Docker Compose da aplicação;
+- containers da aplicação;
+- recursos AWS;
+- Terraform;
+- CloudFormation;
+- CDK;
 - Kafka;
 - RabbitMQ;
-- Docker;
-- observabilidade;
-- OpenTelemetry;
-- AWS.
+- Redis;
+- MongoDB;
+- MySQL;
+- código funcional;
+- testes funcionais da aplicação.
 
-AWS Target:
+Esta execução é exclusivamente:
 
-- SQS;
-- SNS;
-- Lambda;
-- S3;
-- EC2;
-- ECS.
-
-Evolução arquitetural:
-
-`LOCAL FIRST → CONTAINER FIRST → CLOUD READY → AWS TARGET`
-
-Arquitetura e documentação:
-
-- C4;
-- Structurizr DSL;
-- Structurizr Lite;
-- Draw.io editável;
-- ADRs.
-
-Não implemente esses componentes agora.
-
-Eles devem servir para gerar o **backlog estruturado de Tasks**.
+```text
+BOOTSTRAP
++
+KNOWLEDGE LOADING
++
+PLANNING
++
+GOVERNANCE
++
+AGENTS
++
+SKILLS
++
+TASKS
++
+GITFLOW
+```
 
 ---
 
-# 4. KIT IA DEV
+# 4. INSTALAR E ANALISAR O KIT IA DEV
 
 Primeiro analise:
 
-`D:\Empresa\GFMaurila\projetos\Kit-IA-Dev\Kit-IA-Dev`
+```text
+D:\Empresa\GFMaurila\projetos\Kit-IA-Dev\Kit-IA-Dev
+```
 
-Localize e leia:
+Localize e leia, quando existirem:
 
-- documentação;
-- templates;
-- `CLAUDE.md`;
-- `AGENTS.md`;
-- `SKILL.md`;
-- `3-Skills`;
-- `COMO-INSTALAR.md`;
-- Agents;
-- referências;
-- instruções de instalação.
+```text
+README.md
+PROJECT.md
+PROJECT_STRUCTURE.md
+PROJECT_SKILLS.md
+prompts.md
+CLAUDE.md
+AGENTS.md
+3-Skills/
+3-Skills/COMO-INSTALAR.md
+agent_docs/
+references/
+templates/
+SKILL.md
+```
 
 Não copie arquivos cegamente.
 
-Entenda primeiro como o Kit espera ser instalado.
+Primeiro entenda como o Kit funciona e como espera ser instalado.
 
-Preserve:
+Preserve integralmente a estrutura das Skills:
 
-- `SKILL.md`;
-- `references/`;
-- estrutura completa das Skills;
-- documentação técnica em inglês quando originalmente definida assim.
+```text
+skill-name/
+├── SKILL.md
+└── references/
+```
 
----
-
-# 5. AGENTS
-
-Prepare os Agents necessários para execução futura.
-
-O workflow deve considerar pelo menos:
-
-`Requirements Agent`
-
-↓
-
-`Architect Agent`
-
-↓
-
-`Tech Lead Agent`
-
-↓
-
-`Developer Agent`
-
-↓
-
-`Tester Agent`
-
-↓
-
-`Reviewer Agent`
-
-↓
-
-`Documentation Agent`
-
-Os Agents devem trabalhar sobre Tasks pequenas e rastreáveis.
-
-Nenhum Agent deve implementar o projeto nesta execução.
+Quando houver arquivos adicionais pertencentes à Skill, preserve-os também.
 
 ---
 
-# 6. TASK-DRIVEN DEVELOPMENT
+# 5. KNOWLEDGE DICTIONARY — REGRA OBRIGATÓRIA
 
-Crie uma estrutura formal de Tasks.
+Antes de criar, alterar, ordenar ou remover qualquer Task, procure no projeto/Kit o diretório:
 
-Sugestão:
+```text
+docs/dicionario/
+```
+
+Esse diretório representa o **Knowledge Dictionary do projeto**.
+
+Ele foi construído a partir dos chats e estudos anteriores do projeto **IA Claude**.
+
+Os documentos desse diretório NÃO são documentação opcional.
+
+Eles são:
+
+```text
+PROJECT KNOWLEDGE SOURCE
+```
+
+e devem ser tratados como entrada obrigatória para planejamento.
+
+---
+
+# 6. LEITURA OBRIGATÓRIA DO DICIONÁRIO
+
+Leia TODOS os arquivos `.md` existentes em:
+
+```text
+docs/dicionario/
+```
+
+Não leia apenas arquivos cujo nome aparentemente tenha relação com a Task.
+
+Nesta etapa de bootstrap, faça uma leitura completa.
+
+O dicionário contém conhecimento relacionado a assuntos como:
+
+- estrutura de projetos;
+- Agentic Workflow;
+- RAG;
+- Agentic RAG;
+- Graph RAG;
+- Agents;
+- Skills;
+- Plugins;
+- MCP;
+- conectores;
+- frameworks;
+- CI/CD;
+- LLM local;
+- microsserviços;
+- arquitetura;
+- aplicações;
+- SEO/AEO;
+- Free LLM APIs;
+- LinkedIn Manager Agent;
+- ferramentas de escritório;
+- observabilidade;
+- AWS;
+- setup AWS;
+- práticas de desenvolvimento;
+- padrões arquiteturais;
+- ideias que podem ser aplicadas ao projeto.
+
+Não assuma que todos os itens deverão ser implementados.
+
+Primeiro classifique sua relevância.
+
+---
+
+# 7. KNOWLEDGE DISCOVERY
+
+Para cada documento do dicionário, identifique:
+
+```text
+Concept
+Purpose
+Project Relevance
+Architecture Impact
+Infrastructure Impact
+Development Impact
+AI/Agent Impact
+Security Impact
+Testing Impact
+DevOps Impact
+Documentation Impact
+Possible Tasks
+Dependencies
+Priority
+Decision
+```
+
+`Decision` deverá ser uma destas:
+
+```text
+ADOPT
+ADAPT
+REFERENCE
+FUTURE
+NOT_APPLICABLE
+```
+
+---
+
+# 8. CONSOLIDAÇÃO DO CONHECIMENTO
+
+Depois de ler o dicionário inteiro, produza um mapa consolidado.
+
+Crie:
+
+```text
+docs/knowledge/PROJECT_KNOWLEDGE_MAP.md
+```
+
+Ele deverá relacionar:
+
+```text
+Dicionário
+    ↓
+Conceitos
+    ↓
+Requisitos
+    ↓
+Arquitetura
+    ↓
+Decisões
+    ↓
+Tasks
+```
+
+Também crie:
+
+```text
+docs/knowledge/KNOWLEDGE_DECISIONS.md
+```
+
+registrando:
+
+- o que será adotado;
+- o que será adaptado;
+- o que será apenas referência;
+- o que ficará para versões futuras;
+- o que não se aplica;
+- justificativa.
+
+---
+
+# 9. NÃO TRANSFORMAR TODO O DICIONÁRIO EM TASK
+
+O dicionário é uma fonte de conhecimento.
+
+Ele NÃO é automaticamente um backlog.
+
+Exemplo:
+
+```text
+Conhecimento encontrado
+        ↓
+analisar relevância
+        ↓
+comparar com arquitetura
+        ↓
+identificar benefício
+        ↓
+identificar dependências
+        ↓
+tomar decisão
+        ↓
+somente então
+        ↓
+criar Task
+```
+
+Evite transformar estudos ou conceitos puramente informativos em funcionalidades sem necessidade.
+
+---
+
+# 10. FONTE ARQUITETURAL PRINCIPAL
+
+Depois do Knowledge Dictionary, utilize como baseline arquitetural:
+
+```text
+02 - dotnet - AWS
+```
+
+A arquitetura definida nessa referência tem prioridade para estruturar o projeto AWS.
+
+Considere:
+
+```text
+.NET
+ASP.NET Core
+Modular Monolith
+DDD
+SOLID
+Clean Code
+CQRS
+Commands
+Queries
+Domain Events
+Vertical Slice quando aplicável
+Transactional Outbox
+```
+
+Persistência:
+
+```text
+MySQL
+MongoDB
+Redis
+```
+
+Mensageria:
+
+```text
+Kafka
+RabbitMQ
+```
+
+Cloud Target:
+
+```text
+AWS
+├── SQS
+├── SNS
+├── Lambda
+├── S3
+├── EC2
+└── ECS
+```
+
+Observabilidade:
+
+```text
+Structured Logging
+Correlation ID
+OpenTelemetry
+Distributed Tracing
+Metrics
+Health Checks
+Readiness
+Liveness
+```
+
+Arquitetura/documentação:
+
+```text
+C4
+Structurizr DSL
+Structurizr Lite
+Draw.io
+UML
+ER
+ADR
+```
+
+Evolução:
+
+```text
+LOCAL FIRST
+     ↓
+CONTAINER FIRST
+     ↓
+CLOUD READY
+     ↓
+AWS TARGET
+```
+
+Não implemente nada disso agora.
+
+Use essas informações para planejamento.
+
+---
+
+# 11. ORDEM DE PRECEDÊNCIA DAS INFORMAÇÕES
+
+Ao planejar o projeto, siga esta hierarquia:
+
+```text
+1. Instruções explícitas deste prompt
+          ↓
+2. Documentação oficial existente do projeto
+          ↓
+3. Arquitetura 02 - dotnet - AWS
+          ↓
+4. Knowledge Dictionary
+          ↓
+5. Kit IA Dev
+          ↓
+6. Boas práticas gerais
+```
+
+Não substitua uma decisão específica do projeto por uma recomendação genérica encontrada no dicionário.
+
+---
+
+# 12. DETECÇÃO DE CONFLITOS
+
+Antes das Tasks, procure conflitos entre:
+
+```text
+PROJECT.md
+PROJECT_STRUCTURE.md
+prompts.md
+CLAUDE.md
+AGENTS.md
+Architecture
+Knowledge Dictionary
+Kit IA Dev
+GitFlow
+```
+
+Classifique-os como:
+
+```text
+DUPLICATE
+COMPLEMENTARY
+CONFLICT
+OBSOLETE
+MISSING
+```
+
+Documente em:
+
+```text
+docs/knowledge/KNOWLEDGE_CONFLICTS.md
+```
+
+Não resolva silenciosamente conflitos arquiteturais importantes.
+
+Registre a decisão tomada e a justificativa.
+
+---
+
+# 13. AGENTS
+
+Prepare o workflow:
+
+```text
+Requirements Agent
+        ↓
+Knowledge Agent
+        ↓
+Architect Agent
+        ↓
+Tech Lead Agent
+        ↓
+Developer Agent
+        ↓
+Tester / QA Agent
+        ↓
+Reviewer Agent
+        ↓
+Architecture Validation Agent
+        ↓
+Documentation Agent
+```
+
+## Knowledge Agent
+
+Inclua explicitamente um `Knowledge Agent`.
+
+Responsabilidades:
+
+```text
+ler docs/dicionario/
+        ↓
+ler documentação do projeto
+        ↓
+consolidar conhecimento
+        ↓
+detectar conflitos
+        ↓
+identificar decisões anteriores
+        ↓
+fornecer contexto aos demais Agents
+```
+
+Nenhum Agent deve implementar funcionalidades nesta execução.
+
+---
+
+# 14. KNOWLEDGE GATE
+
+Adicione um novo Quality Gate antes da criação das Tasks:
+
+```text
+KNOWLEDGE QUALITY GATE
+```
+
+Ele deverá confirmar:
+
+- [ ] Kit IA Dev analisado
+- [ ] documentação principal lida
+- [ ] `docs/dicionario/` lido completamente
+- [ ] arquitetura `02 - dotnet - AWS` considerada
+- [ ] decisões consolidadas
+- [ ] conflitos identificados
+- [ ] duplicidades identificadas
+- [ ] requisitos consolidados
+- [ ] impactos arquiteturais avaliados
+- [ ] Knowledge Map criado
+
+Se qualquer item obrigatório falhar:
+
+```text
+STOP
+```
+
+Não criar Tasks.
+
+---
+
+# 15. ORDEM OBRIGATÓRIA PARA CRIAÇÃO DAS TASKS
+
+A criação das Tasks deve acontecer SOMENTE nesta ordem:
+
+```text
+KIT IA DEV
+    ↓
+DOCUMENTAÇÃO DO PROJETO
+    ↓
+KNOWLEDGE DICTIONARY
+    ↓
+02 - DOTNET - AWS
+    ↓
+KNOWLEDGE CONSOLIDATION
+    ↓
+CONFLICT ANALYSIS
+    ↓
+REQUIREMENTS
+    ↓
+ARCHITECTURE
+    ↓
+KNOWLEDGE QUALITY GATE
+    ↓
+BACKLOG
+    ↓
+TASKS
+```
+
+É proibido pular diretamente para:
+
+```text
+PROMPT → TASKS
+```
+
+---
+
+# 16. TASK-DRIVEN DEVELOPMENT
+
+Depois que o Knowledge Gate estiver aprovado, crie:
 
 ```text
 tasks/
@@ -207,21 +622,23 @@ tasks/
 ├── ready/
 ├── in-progress/
 ├── review/
-├── done/
-└── blocked/
+├── blocked/
+└── done/
 ```
 
-Cada Task deverá possuir, no mínimo:
+Cada Task deverá possuir:
 
 ```text
 ID
 Title
 Description
 Objective
+Business Context
+Knowledge References
+Architecture References
 Scope
 Out of Scope
 Dependencies
-Architecture References
 Acceptance Criteria
 Tests Required
 Documentation Required
@@ -229,32 +646,52 @@ Branch
 Status
 Assigned Agent
 Reviewer
+Quality Gates
 Merge Target
-```
-
-Utilize IDs sequenciais.
-
-Exemplo:
-
-```text
-TASK-001
-TASK-002
-TASK-003
-...
 ```
 
 ---
 
-# 7. GRANULARIDADE
+# 17. KNOWLEDGE REFERENCES NAS TASKS
 
-Não crie Tasks gigantes.
+Toda Task deverá indicar de onde veio sua necessidade.
 
-Prefira:
+Exemplo:
+
+```text
+Knowledge References:
+- docs/dicionario/02-rag.md
+- docs/dicionario/15-rag-system.md
+
+Architecture References:
+- ARCHITECTURE_PLAN.md
+- ADR-XXX
+```
+
+Isso cria rastreabilidade:
+
+```text
+CONHECIMENTO
+     ↓
+DECISÃO
+     ↓
+REQUISITO
+     ↓
+TASK
+     ↓
+CÓDIGO
+```
+
+---
+
+# 18. GRANULARIDADE DAS TASKS
+
+Utilize:
 
 ```text
 1 Task
    ↓
-1 objetivo
+1 objetivo claro
    ↓
 1 branch
    ↓
@@ -269,13 +706,52 @@ PR
 merge
 ```
 
-Uma Task só poderá começar quando suas dependências estiverem concluídas.
+Evite Tasks gigantes.
+
+Utilize IDs:
+
+```text
+TASK-001
+TASK-002
+TASK-003
+...
+```
 
 ---
 
-# 8. GITFLOW
+# 19. DEPENDÊNCIAS
 
-O projeto deve utilizar:
+Crie um Dependency Graph.
+
+Exemplo:
+
+```text
+TASK-001
+   ↓
+TASK-002
+   ├── TASK-003
+   └── TASK-004
+          ↓
+      TASK-005
+```
+
+Uma Task somente poderá assumir:
+
+```text
+READY
+```
+
+quando todas as dependências obrigatórias estiverem:
+
+```text
+DONE
+```
+
+---
+
+# 20. GITFLOW
+
+Branches permanentes:
 
 ```text
 main
@@ -283,7 +759,7 @@ develop
 hml
 ```
 
-Fluxo normal:
+Desenvolvimento:
 
 ```text
 develop
@@ -294,19 +770,13 @@ develop
    └── feature/task-xxx-...
 ```
 
-Cada Task deverá obrigatoriamente possuir sua própria branch:
+Cada Task possui obrigatoriamente:
 
 ```text
 feature/task-<id>-<descricao-curta>
 ```
 
-Exemplo:
-
-```text
-feature/task-001-bootstrap-documentation
-```
-
-Nunca desenvolver diretamente em:
+Nunca implementar diretamente em:
 
 ```text
 main
@@ -316,104 +786,117 @@ hml
 
 ---
 
-# 9. EXECUÇÃO AUTOMÁTICA DA TASK
+# 21. EXECUÇÃO FUTURA AUTOMATIZADA
 
-Posteriormente, quando for autorizado iniciar a implementação, cada Task deverá executar o seguinte pipeline:
+Quando posteriormente for autorizada a implementação:
 
 ```text
-Selecionar próxima Task READY
-        ↓
+Knowledge Context
+       ↓
+Selecionar próxima TASK READY
+       ↓
 Validar dependências
-        ↓
+       ↓
 git checkout develop
-        ↓
+       ↓
 git pull
-        ↓
+       ↓
 criar feature/task-xxx
-        ↓
+       ↓
 executar Task
-        ↓
-executar testes
-        ↓
-executar quality gates
-        ↓
+       ↓
+build
+       ↓
+tests
+       ↓
+quality gates
+       ↓
 Reviewer Agent
-        ↓
-corrigir problemas
-        ↓
+       ↓
+Architecture Validation
+       ↓
 Documentation Agent
-        ↓
+       ↓
 git add
-        ↓
+       ↓
 git commit
-        ↓
+       ↓
 git push
-        ↓
-criar Pull Request
-        ↓
-validação automática da IA
-        ↓
-merge em develop
-        ↓
-atualizar Task para DONE
-        ↓
-selecionar próxima Task
+       ↓
+criar PR
+       ↓
+AI Review
+       ↓
+Quality Gates
+       ↓
+merge automático em develop
+       ↓
+TASK DONE
+       ↓
+próxima TASK READY
 ```
 
 ---
 
-# 10. MERGE AUTOMÁTICO
+# 22. MERGE AUTOMÁTICO
 
-O merge automático somente poderá acontecer quando TODOS os Quality Gates estiverem verdes.
-
-Obrigatórios:
+Merge automático somente quando TODOS estiverem verdes:
 
 ```text
 Build
-Tests
+Unit Tests
+Integration Tests
 Architecture Validation
 Code Review
 Security Checks
 Documentation
 Acceptance Criteria
+Knowledge Compliance
 ```
 
 Se qualquer Gate falhar:
 
 ```text
-NÃO FAZER MERGE
+NO MERGE
 ```
 
-Mover a Task para:
-
-```text
-blocked
-```
-
-ou retornar para:
+A Task retorna para:
 
 ```text
 in-progress
 ```
 
-dependendo do problema.
+ou:
+
+```text
+blocked
+```
 
 Depois:
 
-1. corrigir;
-2. executar novamente;
-3. revisar novamente;
-4. somente então liberar o merge.
+```text
+corrigir
+   ↓
+testar
+   ↓
+review
+   ↓
+validar
+   ↓
+PR
+   ↓
+merge
+```
 
 ---
 
-# 11. PROMOÇÃO
+# 23. PROMOÇÃO
 
-Tasks normais:
+Tasks:
 
 ```text
 feature/task-*
-        ↓
+      ↓
 develop
 ```
 
@@ -434,36 +917,30 @@ release/1.0.0.0
    ↓
 hml
    ↓
-validação
+validation
    ↓
 main
    ↓
 PROD
 ```
 
-Não executar uma release nesta etapa.
-
-Apenas documentar/preparar o fluxo.
+Não execute release nesta etapa.
 
 ---
 
-# 12. BACKLOG INICIAL
+# 24. BACKLOG INICIAL
 
-Analise a arquitetura `02 - dotnet - AWS` e decomponha a construção futura em Tasks.
+Depois da leitura do dicionário e aprovação do Knowledge Gate, decomponha o projeto considerando:
 
-O backlog deverá contemplar progressivamente:
+## Foundation
 
-### Fundação
+- repository;
+- Solution;
+- architecture;
+- environments;
+- configuration.
 
-- estrutura do repositório;
-- Solution .NET;
-- arquitetura;
-- projetos/camadas;
-- padrões;
-- configurações;
-- ambientes.
-
-### Backend
+## Backend
 
 - Domain;
 - Application;
@@ -471,11 +948,11 @@ O backlog deverá contemplar progressivamente:
 - APIs;
 - CQRS;
 - Domain Events;
-- Validation;
-- Policies;
-- Permissions.
+- validation;
+- policies;
+- permissions.
 
-### Persistência
+## Persistence
 
 - MySQL;
 - MongoDB;
@@ -484,53 +961,50 @@ O backlog deverá contemplar progressivamente:
 - seeds;
 - fake data.
 
-### Segurança
+## Security
 
 - JWT;
 - Refresh Token;
-- login;
-- forgot password;
-- reset password;
-- roles;
-- permissions.
+- Login;
+- Forgot Password;
+- Reset Password;
+- Roles;
+- Permissions.
 
-### Mensageria
+## Messaging
 
 - Kafka;
 - RabbitMQ;
 - Outbox;
-- retry;
-- idempotência;
+- Retry;
+- Idempotency;
 - DLQ.
 
-### Frontend
+## Frontend
 
 - React Site;
 - React Admin;
-- autenticação;
-- autorização;
-- integração com APIs.
+- Authentication;
+- Authorization;
+- API integration.
 
-### Docker
+## Docker
 
 - DEV;
 - TEST;
 - HML;
-- PROD;
-- execução automatizada de testes.
+- PROD.
 
-### Observabilidade
+## Observability
 
 - Structured Logging;
 - Correlation ID;
 - OpenTelemetry;
 - Tracing;
 - Metrics;
-- Health Checks;
-- Readiness;
-- Liveness.
+- Health Checks.
 
-### AWS
+## AWS
 
 - SQS;
 - SNS;
@@ -539,103 +1013,217 @@ O backlog deverá contemplar progressivamente:
 - EC2;
 - ECS.
 
-### Qualidade
+## AI / Knowledge
 
-- Unit Tests;
-- Integration Tests;
-- Architecture Tests;
-- Security Tests;
-- Quality Gates.
+Considere os conceitos relevantes encontrados em:
 
-### Arquitetura
+```text
+docs/dicionario/
+```
 
-- C4;
-- Structurizr;
-- Draw.io;
-- UML;
-- ER;
-- ADRs.
+principalmente quando houver decisões relacionadas a:
 
-Não implemente nenhum desses itens.
+- LLM;
+- RAG;
+- Agentic RAG;
+- Agents;
+- Skills;
+- MCP;
+- AI workflows;
+- integrations;
+- local LLM;
+- AI APIs.
 
-Transforme-os em Tasks ordenadas e com dependências.
+Somente crie Tasks para esses componentes quando a análise indicar:
+
+```text
+ADOPT
+```
+
+ou:
+
+```text
+ADAPT
+```
 
 ---
 
-# 13. ORQUESTRADOR
+# 25. PROMPTS.MD COMO ORQUESTRADOR
 
-Prepare/ajuste o `prompts.md` para funcionar como o orquestrador principal.
+Atualize/prepare:
 
-Ele deverá permitir posteriormente algo equivalente a:
+```text
+prompts.md
+```
+
+para futuramente executar:
 
 ```text
 START
-  ↓
-carregar contexto
-  ↓
-carregar arquitetura
-  ↓
-carregar backlog
-  ↓
-identificar próxima TASK READY
-  ↓
-executar Agents necessários
-  ↓
-criar branch
-  ↓
-implementar
-  ↓
-testar
-  ↓
-review
-  ↓
-documentar
-  ↓
-commit
-  ↓
-push
-  ↓
+   ↓
+LOAD PROJECT
+   ↓
+LOAD KIT
+   ↓
+LOAD KNOWLEDGE DICTIONARY
+   ↓
+LOAD ARCHITECTURE
+   ↓
+RUN KNOWLEDGE AGENT
+   ↓
+VALIDATE KNOWLEDGE GATE
+   ↓
+LOAD BACKLOG
+   ↓
+SELECT NEXT READY TASK
+   ↓
+VALIDATE DEPENDENCIES
+   ↓
+CREATE TASK BRANCH
+   ↓
+RUN REQUIRED AGENTS
+   ↓
+IMPLEMENT
+   ↓
+TEST
+   ↓
+REVIEW
+   ↓
+ARCHITECTURE VALIDATION
+   ↓
+DOCUMENT
+   ↓
+COMMIT
+   ↓
+PUSH
+   ↓
 PR
-  ↓
-quality gates
-  ↓
-merge
-  ↓
+   ↓
+QUALITY GATES
+   ↓
+AUTO MERGE
+   ↓
 TASK DONE
-  ↓
-próxima TASK
+   ↓
+NEXT READY TASK
 ```
 
-Porém:
+## MUITO IMPORTANTE
 
-**NÃO DISPARAR ESTE LOOP NESTA EXECUÇÃO.**
+NÃO execute esse loop agora.
+
+Somente prepare o mecanismo.
 
 ---
 
-# 14. CHECKPOINT OBRIGATÓRIO
+# 26. REGRA PARA TODAS AS EXECUÇÕES FUTURAS
 
-Quando terminar o bootstrap, PARE.
+Antes de qualquer Agent trabalhar em uma Task futura, ele deverá carregar:
 
-Mostre:
+```text
+README.md
+PROJECT.md
+PROJECT_STRUCTURE.md
+prompts.md
+CLAUDE.md
+AGENTS.md
+REQUIREMENTS.md
+ARCHITECTURE_PLAN.md
+EXECUTION_PLAN.md
+PROJECT_KNOWLEDGE_MAP.md
+KNOWLEDGE_DECISIONS.md
+ADRs relevantes
+Task atual
+Knowledge References da Task
+```
 
-1. arquivos criados;
-2. arquivos modificados;
-3. Skills instaladas;
-4. Agents preparados;
-5. estrutura de Tasks;
-6. quantidade de Tasks geradas;
-7. dependências principais;
-8. estratégia GitFlow;
-9. branches existentes;
-10. próxima Task candidata;
-11. riscos ou pendências.
+Quando necessário, consultar novamente:
 
-Finalize explicitamente com:
+```text
+docs/dicionario/
+```
 
-`BOOTSTRAP CONCLUÍDO — IMPLEMENTAÇÃO NÃO INICIADA`
+Isso evita decisões desconectadas do conhecimento acumulado do projeto.
+
+---
+
+# 27. CHECKPOINT FINAL OBRIGATÓRIO
+
+Ao terminar o bootstrap, PARE.
+
+Apresente:
+
+```text
+BOOTSTRAP REPORT
+
+Kit IA Dev:
+- status
+
+Skills:
+- instaladas
+- atualizadas
+
+Agents:
+- preparados
+
+Knowledge Dictionary:
+- arquivos encontrados
+- arquivos lidos
+- conceitos identificados
+
+Knowledge:
+- ADOPT
+- ADAPT
+- REFERENCE
+- FUTURE
+- NOT_APPLICABLE
+
+Conflicts:
+- encontrados
+- resolvidos
+- pendentes
+
+Architecture:
+- status
+
+Tasks:
+- total
+- backlog
+- ready
+- blocked
+
+Dependencies:
+- resumo
+
+GitFlow:
+- status
+
+Branches:
+- existentes
+- planejadas
+
+Next Candidate Task:
+- TASK-XXX
+
+Implementation:
+- NOT STARTED
+```
+
+Finalize obrigatoriamente com:
+
+```text
+BOOTSTRAP CONCLUÍDO
+KNOWLEDGE DICTIONARY CARREGADO
+TASKS E DEPENDÊNCIAS PREPARADAS
+IMPLEMENTAÇÃO NÃO INICIADA
+
+AGUARDANDO AUTORIZAÇÃO PARA EXECUTAR A PRIMEIRA TASK.
+```
 
 Não crie a branch da primeira Task de implementação.
 
 Não implemente a primeira Task.
 
-Aguarde minha autorização.
+Não inicialize automaticamente o loop.
+
+Aguarde autorização.
